@@ -143,7 +143,9 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        #"ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+
         # DB name or path to database file if using sqlite3.
         "NAME": "",
         # Not used with sqlite3.
@@ -345,6 +347,8 @@ NEVERCACHE_KEY = "p0e&5mvh&*u5skx7pu1jckrql&&x+h57-3!ly#15*+%l2toa13"
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+
 
 
 #Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
