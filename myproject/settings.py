@@ -336,3 +336,7 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+#Secret Key
+SECRET_KEY = "5@sr7dzx$i=h#&)*jl)wdhm5np@a)l_a&ny2ds4w8naq3c*-8m"
+NEVERCACHE_KEY = "p0e&5mvh&*u5skx7pu1jckrql&&x+h57-3!ly#15*+%l2toa13"
