@@ -2,6 +2,7 @@ beautifulsoup4==4.4.1
 bleach==1.4.2
 chardet==2.3.0
 dj-database-url==0.4.1
+dj-static==0.0.6
 Django==1.9.5
 django-contrib-comments==1.7.0
 filebrowser-safe==0.4.3
@@ -19,5 +20,6 @@ pytz==2016.4
 requests==2.9.1
 requests-oauthlib==0.6.1
 six==1.10.0
+static3==0.6.1
 tzlocal==1.2.2
 whitenoise==3.0
