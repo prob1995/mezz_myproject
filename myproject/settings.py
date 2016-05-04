@@ -143,8 +143,8 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        #"ENGINE": "django.db.backends.",
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.",
+        #"ENGINE": "django.db.backends.postgresql_psycopg2",
 
         # DB name or path to database file if using sqlite3.
         "NAME": "",
@@ -339,13 +339,16 @@ except ImportError:
 else:
     set_dynamic_settings(globals())
 
+# FOR HEROKU DEPLOY
+
+
 #Secret Key
 SECRET_KEY = "5@sr7dzx$i=h#&)*jl)wdhm5np@a)l_a&ny2ds4w8naq3c*-8m"
 NEVERCACHE_KEY = "p0e&5mvh&*u5skx7pu1jckrql&&x+h57-3!ly#15*+%l2toa13"
 
 # Update database configuration with $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
+#import dj_database_url
+#db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
@@ -368,10 +371,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 #FOR HEROKU DEPLOY
-
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+'''
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -392,3 +392,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+'''
