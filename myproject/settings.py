@@ -258,8 +258,8 @@ INSTALLED_APPS = (
 # response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = (
     #'django.middleware.security.SecurityMiddleware',
-    "mezzanine.core.middleware.UpdateCacheMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    "mezzanine.core.middleware.UpdateCacheMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Uncomment if using internationalisation or localisation
     # 'django.middleware.locale.LocaleMiddleware',
@@ -369,9 +369,6 @@ STATICFILES_DIRS = (
 
 '''
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
