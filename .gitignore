@@ -6,5 +6,7 @@
 local_settings.py
 venv
 .env
+/static
 staticfiles
+
 
