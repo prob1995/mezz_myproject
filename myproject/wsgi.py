@@ -38,6 +38,6 @@ application = Cling(get_wsgi_application())
 
 
 from whitenoise import WhiteNoise
-from my_project import MyWSGIApp
+from myproject import MyWSGIApp
 application = MyWSGIApp()
 application = WhiteNoise(application, root='/myproject/static')
