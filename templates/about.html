@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
   <!-- Head -->
   {% include "common/head.html" %}
   <body role="document">
@@ -17,7 +18,7 @@
      <div class="container">
       <div class="page-header">
       </div>
-        <img class="img-responsive center-block" src="/static/image/about/about_theme.png" alt="About us">
+        <img class="img-responsive center-block" src="{% static "image/about/about_theme.png" %}" alt="About us">
        <!-- Introduction Row -->
         <div class="row">
             <div class="col-lg-12">
@@ -43,7 +44,7 @@
                 <h2 class="page-header">團隊成員</h2>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="/static/image/about/joe.png" alt="pic" width="200px">
+                <img class="img-circle img-responsive img-center" src="{% static "image/about/joe.png" %}" alt="pic" width="200px">
                 <h3>Joe Huang
                     <small></small>
                 </h3>
@@ -51,7 +52,7 @@
                 <br>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="/static/image/about/wayne.png" alt="pic" width="200px">
+                <img class="img-circle img-responsive img-center" src="{% static "image/about/wayne.png" %}" alt="pic" width="200px">
                 <h3>Wayne Lin
                     <small></small>
                 </h3>
@@ -59,7 +60,7 @@
                 <br>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="/static/image/about/polin_square.png" alt="pic" width="200px">
+                <img class="img-circle img-responsive img-center" src="{% static "image/about/polin_square.png" %}" alt="pic" width="200px">
                 <h3>Polin Liao
                     <small></small>
                 </h3>
@@ -67,7 +68,7 @@
                 <br>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="/static/image/about/KC.png" alt="">
+                <img class="img-circle img-responsive img-center" src="{% static "image/about/KC.png" %}" alt="">
                 <h3>Kevin Chen
                     <small></small>
                 </h3>
