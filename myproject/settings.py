@@ -369,6 +369,10 @@ STATICFILES_DIRS = (
 
 '''
 
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_APP_PATH, 'static'),
+)
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
