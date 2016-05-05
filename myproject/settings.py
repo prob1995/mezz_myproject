@@ -370,7 +370,7 @@ STATICFILES_DIRS = (
 '''
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_APP_PATH, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
 
 
