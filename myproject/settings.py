@@ -353,7 +353,7 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-
+'''
 #modified
 #Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
 # Static files (CSS, JavaScript, Images)
@@ -370,6 +370,7 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+'''
 
 '''
 #Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
