@@ -147,15 +147,15 @@ DATABASES = {
         #"ENGINE": "django.db.backends.postgresql_psycopg2",
 
         # DB name or path to database file if using sqlite3.
-        "NAME": "d7t6ia9bcemekd",
+        "NAME": "myproject",
         # Not used with sqlite3.
-        "USER": "owdygzapgybwfb",
+        "USER": "prob1995",
         # Not used with sqlite3.
-        "PASSWORD": "RmD6yp6ICXTUFxT6pqf-SjU4NZ",
+        "PASSWORD": "admin",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "ec2-50-16-218-45.compute-1.amazonaws.com",
+        "HOST": "",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "5432",
+        "PORT": "",
     }
 }
 
