@@ -1,5 +1,6 @@
 beautifulsoup4==4.4.1
 bleach==1.4.2
+boto==2.40.0
 brotlipy==0.2.0
 cffi==1.6.0
 chardet==2.3.0
@@ -7,6 +8,8 @@ dj-database-url==0.4.1
 dj-static==0.0.6
 Django==1.9.6
 django-contrib-comments==1.7.1
+django-s3-storages-utils==0.1.0
+django-storages==1.4.1
 filebrowser-safe==0.4.3
 future==0.15.2
 gevent==1.1.1
