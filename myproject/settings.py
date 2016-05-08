@@ -425,6 +425,8 @@ LOGGING = {
 }
 
 
+GRAPPELLI_ADMIN_TITLE = "SM Internal"
+
 '''
 #Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
 # Static files (CSS, JavaScript, Images)
