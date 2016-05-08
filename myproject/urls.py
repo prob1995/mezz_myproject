@@ -40,7 +40,11 @@ urlpatterns += [
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
     url(r'^about/', direct_to_template, {"template": "about.html"}, name="about"),
-
+    url(r'^issues/', direct_to_template, {"template": "issue/issues.html"}, name="issues"),
+    url(r'^solutions/', direct_to_template, {"template": "solution/solutions.html"}, name="solutions"),
+    url(r'^fwissue/', direct_to_template, {"template": "issue/foodwaste/fwissue.html"}, name="fwissue"),
+    url(r'^omissue/', direct_to_template, {"template": "issue/oldman/omissue.html"}, name="omissue"),
+    url(r'^bissue/', direct_to_template, {"template": "issue/breath/bissue.html"}, name="bissue"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -80,7 +84,7 @@ urlpatterns += [
     # ``mezzanine.urls``, go right ahead and take the parts you want
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
-     url("^", include("mezzanine.urls")),
+    url("^", include("mezzanine.urls")),
 
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
@@ -106,9 +110,9 @@ urlpatterns += [
     # url(r'^fwissue/', 'myproject.views.fwissue'),
     # url(r'^omissue/', 'myproject.views.omissue'),
     # url(r'^bissue/', 'myproject.views.bissue'),
-    url(r'^issues/', direct_to_template, {"template": "issue/issues.html"}, name="issues"),
-    url(r'^solutions/', direct_to_template, {"template": "solution/solutions.html"}, name="issues"),
-    url(r'^about/', direct_to_template, {"template": "about.html"}, name="about"),
+    # url(r'^issues/', direct_to_template, {"template": "/issue/issues.html"}, name="issues"),
+    # url(r'^solutions/', direct_to_template, {"template": "solutions.html"}, name="solutions"),
+    # url(r'^about/', direct_to_template, {"template": "about.html"}, name="about"),
 
     # url(r'^resetpw/', 'member.views.resetpw'),
     # url(r'^en/issue', 'home.views.issue_e'),
