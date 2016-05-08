@@ -106,8 +106,8 @@ urlpatterns += [
     # url(r'^fwissue/', 'myproject.views.fwissue'),
     # url(r'^omissue/', 'myproject.views.omissue'),
     # url(r'^bissue/', 'myproject.views.bissue'),
-    # url(r'^issues/', 'home.views.issues'),
-    # url(r'^solutions/', 'home.views.solutions'),
+    url(r'^issues/', direct_to_template, {"template": "issue/issues.html"}, name="issues"),
+    url(r'^solutions/', direct_to_template, {"template": "solution/solutions.html"}, name="issues"),
     url(r'^about/', direct_to_template, {"template": "about.html"}, name="about"),
 
     # url(r'^resetpw/', 'member.views.resetpw'),
