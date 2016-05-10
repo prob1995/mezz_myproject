@@ -253,6 +253,7 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     "storages",
     "gunicorn",
+    "custom_blogpost",
 
     # "mezzanine.accounts",
     # "mezzanine.mobile",
