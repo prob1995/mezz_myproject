@@ -400,7 +400,7 @@ STATICFILES_DIRS = (
 AWS_QUERYSTRING_AUTH = False
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'ssmm-static'
+AWS_STORAGE_BUCKET_NAME = 'smakers-static'
 AWS_PRELOAD_METADATA = True #helps collectstatic do updates
 
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
