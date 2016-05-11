@@ -26,6 +26,7 @@ from django.utils.translation import ugettext_lazy as _
 #     ("Users", ("auth.User", "auth.Group",)),
 # )
 
+
 # A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
 #
@@ -34,6 +35,7 @@ from django.utils.translation import ugettext_lazy as _
 #     ("comment_tags.recent_comments",),
 #     ("mezzanine_tags.recent_actions",),
 # )
+
 
 # A sequence of templates used by the ``page_menu`` template tag. Each
 # item in the sequence is a three item sequence, containing a unique ID
