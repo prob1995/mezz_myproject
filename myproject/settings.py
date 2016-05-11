@@ -414,8 +414,8 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 MEDIA_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 #MEDIA_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3-website-ap-southeast-1.amazonaws.com/'
-MEDIA_ROOT = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
-#MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
+#MEDIA_ROOT = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
 
 
 
