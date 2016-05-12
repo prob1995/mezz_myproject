@@ -244,6 +244,10 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "custom_blogpost",
+    "custom_storages",
+    "storages",
+    "gunicorn",
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
@@ -253,10 +257,8 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    "custom_storages",
-    "storages",
-    "gunicorn",
-    "custom_blogpost",
+
+
 
 
     # "mezzanine.accounts",
