@@ -253,10 +253,11 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "custom_storages",
     "storages",
     "gunicorn",
     "custom_blogpost",
-    "custom_storages",
+
 
     # "mezzanine.accounts",
     # "mezzanine.mobile",
@@ -411,13 +412,10 @@ STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 #http://ssmm-static.s3-website-ap-southeast-1.amazonaws.com/
-
 STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
-#STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3-website-ap-southeast-1.amazonaws.com/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 MEDIA_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
-#MEDIA_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3-website-ap-southeast-1.amazonaws.com/'
 #MEDIA_ROOT = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 #MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
 
@@ -436,8 +434,9 @@ LOGGING = {
 # Dan Suggestion
 # https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
 AWS_STORAGE_BUCKET_NAME = 'smakers-static'
-AWS_ACCESS_KEY_ID = 'AKIAIJJS2W56QFAPILFQ'
-AWS_SECRET_ACCESS_KEY = 'BjkqHIn31zMWRz2eMt8gYewMOEhVjGgxxgh6rH03'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
 
 # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
 # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
@@ -460,9 +459,11 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIA_ROOT= ""
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 
-
+AWS_PRELOAD_METADATA = True
 
 '''
 #Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
