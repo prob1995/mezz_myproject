@@ -464,6 +464,7 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 
 AWS_PRELOAD_METADATA = True
+AWS_QUERYSTRING_EXPIRE = 7200
 
 '''
 #Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
