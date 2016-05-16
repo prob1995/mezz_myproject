@@ -72,3 +72,10 @@ body {
 }
 
 
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 63px;
+    height: 63px;
+    padding-top: 0;
+}
+
