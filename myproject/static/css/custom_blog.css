@@ -2,6 +2,7 @@ p {
 line-height: 1.8em;
 }
 
+/*
 .share-facebook, .share-twitter,
 .share-facebook:hover, .share-twitter:hover {
   color: #fff;
@@ -9,7 +10,6 @@ line-height: 1.8em;
 }
 
 
-/*
 .share-facebook {
   background-color: #4667A6;
 }

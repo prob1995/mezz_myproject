@@ -99,8 +99,19 @@
     <img src="{% static "image/logo/FB_icon.png" %}" alt="FB" style="width: 25px;">&nbsp;
     {% trans "分享" %}
 </a>
+
+<a class="btn btn-sm share-google" target="_blank" href="https://plus.google.com/share?url={{ request.build_absolute_uri }}">
+    <img src="{% static "image/logo/GP_icon.png" %}" alt="Google+" style="width: 25px;">&nbsp;
+    {% trans "分享" %}
+</a>
+
 <a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">
     <img src="{% static "image/logo/TWIT_icon.png" %}" alt="Twitter" style="width: 25px;">&nbsp;
+    {% trans "分享" %}
+</a>
+
+<a class="btn btn-sm share-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&amp;title={{ blog_post.title|urlencode }}">
+    <img src="{% static "image/logo/LD_icon.png" %}" alt="LinkedIn" style="width: 25px;">&nbsp;
     {% trans "分享" %}
 </a>
 
