@@ -100,11 +100,6 @@
     {% trans "分享" %}
 </a>
 
-<a class="btn btn-sm share-google" target="_blank" href="https://plus.google.com/share?url={{ request.build_absolute_uri }}">
-    <img src="{% static "image/logo/GP_icon.png" %}" alt="Google+" style="width: 25px;">&nbsp;
-    {% trans "分享" %}
-</a>
-
 <a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">
     <img src="{% static "image/logo/TWIT_icon.png" %}" alt="Twitter" style="width: 25px;">&nbsp;
     {% trans "分享" %}
@@ -115,6 +110,10 @@
     {% trans "分享" %}
 </a>
 
+<a class="btn btn-sm share-google" target="_blank" href="https://plus.google.com/share?url={{ request.build_absolute_uri }}">
+    <img src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Google+" style="width: 25px;">&nbsp;
+    {% trans "分享" %}
+</a>
 
 {% endblock %}
 
