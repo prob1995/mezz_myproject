@@ -119,3 +119,7 @@ iframe {
 footer{
     font-size: 16px;
 }
+
+ol {
+word-break:break-all;
+}
