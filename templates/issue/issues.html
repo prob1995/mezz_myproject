@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
   <!-- Head -->
   {% include "common/head.html" %}
   <body role="document">
@@ -8,34 +9,16 @@
 
 
     <div class="container theme-showcase" role="main">
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing">
       <div class="page-header">
       </div>
-      <!-- Three columns of text below the carousel-->
-<!--      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="https://drive.google.com/uc?id=0B8RpWqb4YXwsLU45YTVpUXh0YWc" alt="Generic placeholder image" width="250" height="250">
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" src="https://drive.google.com/uc?id=0B8RpWqb4YXwsNzFJS05nZGJxSnM" alt="Generic placeholder image" width="250" height="250">
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" src="https://drive.google.com/uc?id=0B8RpWqb4YXwsdWp3OEJfM1E1SE0" alt="Generic placeholder image" width="250" height="250">
-        </div>
-      </div>
-      <hr>
--->      
+
       <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-3 text-center vcenter">
           <p>
-          <img class="img-rounded" src="../static/image/issue/ngo.png" alt="ngo flow" width="250">
+          <img class="img-rounded" src="{% static "image/issue/ngo_c.png" %}" alt="ngo flow" width="250">
           </p>
         </div>
         <div class="col-md-7 vcenter">
@@ -60,27 +43,6 @@
               <dd class="dd-font">將量產後的產品運送到議題當地，持續追蹤使用情形並提供後續支援。</dd>
             </dl>  
           </div>
-        
-<!--        <div class="col-xs-2">
-          <div class="vertical-space-around2">
-          <h3>發現問題</h3>
-          <h3>申請表單</h3>
-          <h3>設計測試</h3>
-          <h3>量產製造</h3>
-          <h3>解決問題</h3>
-          </div>
-        </div>
-
-        <div class="col-xs-5">
-          <div class="vertical-space-around2">
-          <p><blockquote>由長期關注社會議題的組織提出，透過相關的田野調查經驗剖析問題背後的問題。</blockquote></p>
-          <p><blockquote>填寫SolutionMakers專用申請表單，並提供輔佐提案之影音資訊及任何相關資料。</blockquote></p>
-          <p><blockquote>在設計製作過程當中適時提供協助。原型測試階段協助安排，與當地居民溝通協調，並記錄測試過程。</blockquote></p>
-          <p><blockquote>由SolutionMakers合作夥伴生產，依當地情況決定量產數量。</blockquote></p>
-          <p><blockquote>將量產後的產品運送到議題當地，持續追蹤使用情形並提供後續支援。</blockquote></p>
-          </div>
-        </div>
-        -->
         <div class="col-md-1">
         </div>
       </div>
@@ -88,7 +50,7 @@
 
       <div class="row text-center">
           <div class="col-md-3 vcenter">
-              <img class="img-circle center-block" src="../static/image/issue/breath.png" alt="Cambodia" width="175" height="175">
+              <img class="img-circle center-block" src="{% static "image/issue/breath_c.png" %}" alt="Cambodia" width="175" height="175">
           </div>
           <div class="col-md-6 vcenter hleft">
               <h3>柬埔寨偏鄉生計實況</h3>
@@ -108,7 +70,7 @@
       <hr>
       <div class="row text-center">
           <div class="col-md-3 vcenter">
-              <img class="img-circle center-block" src="../static/image/issue/energy.png" alt="Energy" width="175" height="175">
+              <img class="img-circle center-block" src="{% static "image/issue/energy_c.png" %}" alt="Energy" width="175" height="175">
           </div>
           <div class="col-md-6 vcenter hleft">
               <h3>廚餘處理挑戰</h3>
@@ -129,7 +91,7 @@
       <hr>
       <div class="row text-center">
           <div class="col-md-3 vcenter">
-              <img class="img-circle  center-block" src="../static/image/issue/oldman.png" alt="Oldman" width="175" height="175">
+              <img class="img-circle  center-block" src="{% static "image/issue/oldman_c.png" %}" alt="Oldman" width="175" height="175">
           </div>
           <div class="col-md-6 vcenter hleft">
               <h3>獨居長者送餐規劃</h3>

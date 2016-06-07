@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n mezzanine_tags blog_tags keyword_tags disqus_tags %}
 
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "觀察" %}{% endif %}{% endblock %}
 
 {% block meta_keywords %}{% metablock %}
 {% keywords_for page as keywords %}
@@ -15,13 +15,19 @@
 {{ page.description }}
 {% endmetablock %}{% endblock %}
 
+
 {% block title %}
 {% if page %}
 {% editable page.title %}{{ page.title }}{% endeditable %}
 {% else %}
-{% trans "Blog" %}
+{% trans "SolutionMakers 與觀察者們" %}
+<br>
+<br>
 {% endif %}
+
 {% endblock %}
+
+
 
 {% block breadcrumb_menu %}
 {{ block.super }}
@@ -54,8 +60,8 @@
         {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
         {{ year }}
     {% else %}{% if author %}
-        {% trans "Viewing posts by" %}
         {{ author.get_full_name|default:author.username }}
+        {% trans "的文章：" %}
     {% endif %}{% endif %}{% endif %}{% endif %}
     {% endblock %}
     </p>
@@ -74,15 +80,15 @@
 {% for blog_post in blog_posts.object_list %}
 {% block blog_post_list_post_title %}
 {% editable blog_post.title %}
-<h2>
+<h3>
     <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a>
-</h2>
+</h3>
 {% endeditable %}
 {% endblock %}
 {% block blog_post_list_post_metainfo %}
 {% editable blog_post.publish_date %}
 <h6 class="post-meta">
-    {% trans "Posted by" %}:
+    {% trans "文" %}/
     {% with blog_post.user as author %}
     <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
     {% endwith %}
@@ -94,7 +100,9 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
+    <!--
     {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
+    -->
 </h6>
 {% endeditable %}
 {% endblock %}
@@ -109,7 +117,7 @@
 
 {% block blog_post_list_post_content %}
 {% editable blog_post.content %}
-{{ blog_post.description_from_content|safe }}
+{{ blog_post.description|safe }}
 {% endeditable %}
 {% endblock %}
 
@@ -127,7 +135,7 @@
     </ul>
     {% endif %}
     <p>
-    <a href="{{ blog_post.get_absolute_url }}">{% trans "read more" %}</a>
+    <a href="{{ blog_post.get_absolute_url }}">{% trans "閱讀全部" %}</a>
     {% if blog_post.allow_comments %}
     /
     {% if settings.COMMENTS_DISQUS_SHORTNAME %}

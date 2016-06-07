@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
   <!-- Head -->
   {% include "common/head.html" %}
   <body role="document">
@@ -9,33 +10,24 @@
 
   <div class="container theme-showcase" role="main">
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
- <!--     <div class="container marketing"> -->
      <div class="container-fluid">
       <div class="page-header">
       </div>
-      <div class="container-fluid">
-      <!--  <div class="row">  -->
-      <!-- <img class="img-responsive center-block" src="../static/image/home/world.png" alt="World Map" width="100%"> -->
-      <img src="../static/image/home/world.png" alt="World Map" width="100%">
+         <div style=" margin-left: -25px; margin-right: -25px;">
+           <img src="{% static "image/home/world_c.png" %}" alt="World Map" width="100%">
 
-    <!--  </div>  -->
       </div>
       <hr>
-      <!-- Three columns of text below the carousel-->
       <div class="row">
         <div class="col-sm-6 center">
-          <img class="img-circle img-responsive center-block" src="../static/image/home/issue.jpg" alt="Generic placeholder image" width="250" height="250">
+          <img class="img-circle img-responsive center-block" src="{% static "image/home/issue_2.png" %}" alt="Generic placeholder image" width="250" height="250">
           <h2>議題</h2>
           <p>看看我們發現的議題</p>
           <p><a class="btn btn-default" href="/issues" role="button">Issues &raquo;</a></p>
         </div>
         
         <div class="col-sm-6 center">
-          <img class="img-circle img-responsive center-block" src="../static/image/home/solution.jpg" alt="Generic placeholder image" width="250" height="250">
+          <img class="img-circle img-responsive center-block" src="{% static "image/home/solution_2.png" %}" alt="Generic placeholder image" width="250" height="250">
           <h2>解決方案</h2>
           <p>看看現有的解決方案</p>
           <p><a class="btn btn-default" href="/solutions" role="button">View Solutions &raquo;</a></p>
@@ -48,6 +40,10 @@
         <caption class="text-center">News</caption>
         <tbody>
           <tr>
+            <th class="col-md-3">2016.5.23</th>
+            <td class="col-md-9">【社計世代六月工坊】閃耀登場：打造屬於你的社會設計！<a href="http://www.accupass.com/org/detail/r/1510300255072302091850/1/0">課程內容與報名</a></td>
+          </tr>
+          <tr>
             <th class="col-md-3">2016.2.25</th>
             <td class="col-md-9">Solutionmakers 【社會設計的智造世代】3月份實作工坊課程公佈！<a href="http://www.accupass.com/go/solutionmakers">課程內容與報名</a></td>
           </tr>
@@ -57,11 +53,11 @@
           </tr>
           <tr>
             <th class="col-md-3">2015.11.5</th>
-            <td class="col-md-9">2015.12 Solutionmakers X ELIV 課程公佈！<a href="/static/image/home/2015.12_course_edm.pdf">課程內容</a>，<a href="http://www.accupass.com/event/register/1511050735369388038450">點我報名</a></td>
+            <td class="col-md-9">2015.12 Solutionmakers X ELIV 課程公佈！<a href="{% static "image/home/2015.12_course_edm.pdf" %}">課程內容</a>，<a href="http://www.accupass.com/event/register/1511050735369388038450">點我報名</a></td>
           </tr>
           <tr>
             <th class="col-md-3">2015.11.5</th>
-            <td class="col-md-9">2015.11 Solutionmakers X ELIV 課程公佈！<a href="/static/image/home/2015.11_course_edm.pdf">課程內容</a>，<a href="http://www.accupass.com/event/register/1510300335581740990703">點我報名</a></td>
+            <td class="col-md-9">2015.11 Solutionmakers X ELIV 課程公佈！<a href="{% static "image/home/2015.11_course_edm.pdf" %}">課程內容</a>，<a href="http://www.accupass.com/event/register/1510300335581740990703">點我報名</a></td>
           </tr>
           <tr>
             <th class="col-md-3">2015.10.15</th>
@@ -95,8 +91,7 @@
       <!-- footer -->  
       {% include "common/footer.html" %}
 
-    </div> <!-- /container -->
-
+    </div>
     <!-- bottom Bootstrap and JS -->
     {% include "common/bottom_js.html" %}
 

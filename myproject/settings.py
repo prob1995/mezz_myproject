@@ -26,6 +26,7 @@ from django.utils.translation import ugettext_lazy as _
 #     ("Users", ("auth.User", "auth.Group",)),
 # )
 
+
 # A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
 #
@@ -34,6 +35,7 @@ from django.utils.translation import ugettext_lazy as _
 #     ("comment_tags.recent_comments",),
 #     ("mezzanine_tags.recent_actions",),
 # )
+
 
 # A sequence of templates used by the ``page_menu`` template tag. Each
 # item in the sequence is a three item sequence, containing a unique ID
@@ -119,6 +121,7 @@ LANGUAGES = (
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
 DEBUG = False
+FILEBROWSER_DEBUG = True
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -143,13 +146,15 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        #"ENGINE": "django.db.backends.postgresql_psycopg2",
+
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "myproject",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "prob1995",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "admin",
         # Set to empty string for localhost. Not used with sqlite3.
         "HOST": "",
         # Set to empty string for default. Not used with sqlite3.
@@ -174,22 +179,24 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_APP
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = "/static/"
+#STATIC_URL = "/static/"
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 
+
+# For local test
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = STATIC_URL + "media/"
+#MEDIA_URL = STATIC_URL + "media/"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
+#MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
 
 # Package/module name to import the root urlpatterns from for the project.
 ROOT_URLCONF = "%s.urls" % PROJECT_APP
@@ -238,6 +245,10 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "custom_blogpost",
+    "custom_storages",
+    "storages",
+    "gunicorn",
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
@@ -247,6 +258,8 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
+
+
     # "mezzanine.accounts",
     # "mezzanine.mobile",
 )
@@ -255,8 +268,9 @@ INSTALLED_APPS = (
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = (
+    #'django.middleware.security.SecurityMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     "mezzanine.core.middleware.UpdateCacheMiddleware",
-
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Uncomment if using internationalisation or localisation
     # 'django.middleware.locale.LocaleMiddleware',
@@ -277,6 +291,7 @@ MIDDLEWARE_CLASSES = (
     # "mezzanine.core.middleware.SSLRedirectMiddleware",
     "mezzanine.pages.middleware.PageMiddleware",
     "mezzanine.core.middleware.FetchFromCacheMiddleware",
+
 )
 
 # Store these package names here as they may change in the future since
@@ -336,3 +351,167 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+# FOR HEROKU DEPLOY
+
+
+#Secret Key
+SECRET_KEY = "5@sr7dzx$i=h#&)*jl)wdhm5np@a)l_a&ny2ds4w8naq3c*-8m"
+NEVERCACHE_KEY = "p0e&5mvh&*u5skx7pu1jckrql&&x+h57-3!ly#15*+%l2toa13"
+
+
+# Update database configuration with $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
+'''
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+'''
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+'''
+#modified
+#Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+#PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_APP_PATH, 'static'),
+)
+
+'''
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_APP_PATH, 'static'),
+)
+
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# Ben suggestion
+# http://www.benhavilland.com/blog/deploying-mezzanine-on-heroku/
+'''
+###################
+# S3 STATIC FILES #
+###################
+# For heroku
+
+AWS_QUERYSTRING_AUTH = False
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'smakers-static'
+AWS_PRELOAD_METADATA = True #helps collectstatic do updates
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+#http://ssmm-static.s3-website-ap-southeast-1.amazonaws.com/
+STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
+
+MEDIA_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+#MEDIA_ROOT = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+#MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
+
+
+###########
+# LOGGING #
+###########
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+}
+'''
+
+
+# Dan Suggestion
+# https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
+AWS_STORAGE_BUCKET_NAME = 'smakers-static'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+
+# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+# it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+# This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+# We also use it in the next setting.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# This is used by the `static` template tag from `static`, if you're using that. Or if anything else
+# refers directly to STATIC_URL. So it's safest to always set it.
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+
+# Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
+# you run `collectstatic`).
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIA_ROOT= ""
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
+
+
+AWS_PRELOAD_METADATA = True
+AWS_QUERYSTRING_EXPIRE = 7200
+
+'''
+#Heroku suggestion  https://devcenter.heroku.com/articles/django-app-configuration
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+'''
+
+
+#FOR HEROKU DEPLOY
+
+'''
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Disable debug mode
+DEBUG = False
+TEMPLATE_DEBUG = False
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+'''

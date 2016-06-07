@@ -1,0 +1,23 @@
+p {
+line-height: 1.8em;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+font-weight: 500;
+}
+
+/*
+.share-facebook, .share-twitter,
+.share-facebook:hover, .share-twitter:hover {
+  color: #fff;
+  font-weight: 700;
+}
+
+
+.share-facebook {
+  background-color: #4667A6;
+}
+.share-twitter {
+  background-color: #00A3D4;
+}
+*/

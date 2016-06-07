@@ -1,5 +1,5 @@
 {% extends "blog/blog_post_list.html" %}
-{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n disqus_tags %}
+{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n disqus_tags staticfiles%}
 
 {% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
 
@@ -25,15 +25,18 @@
 
 {% block blog_post_detail_postedby %}
 {% editable blog_post.publish_date %}
-<h6 class="post-meta">
-    {% trans "Posted by" %}:
+<h5 class="post-meta">
+    {% trans "文" %}/
     {% with blog_post.user as author %}
     <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
     {% endwith %}
+    <!--
     {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
-</h6>
+    -->
+</h5>
 {% endeditable %}
 {% endblock %}
+<br>
 {% block blog_post_detail_commentlink %}
 <p>
     {% if blog_post.allow_comments %}
@@ -50,13 +53,6 @@
 </p>
 {% endblock %}
 
-<!--
-{% block blog_post_detail_featured_image %}
-{% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
-<p><img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
-{% endif %}
-{% endblock %}
--->
 
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_counts.html" %}
@@ -81,20 +77,29 @@
 {% endspaceless %}
 {% endif %}
 {% endblock %}
+<br>
 
-<!-- {% block blog_post_detail_rating %}
-<div class="panel panel-default rating">
-    <div class="panel-body">
-    {% rating_for blog_post %}
-    </div>
-</div>
-{% endblock %}
--->
 
 {% block blog_post_detail_sharebuttons %}
 {% set_short_url_for blog_post %}
-<a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">{% trans "Share on Twitter" %}</a>
-<a class="btn btn-sm share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}">{% trans "Share on Facebook" %}</a>
+        <a class="btn btn-sm share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}" style="padding-left: 0px; border-left-width: 0px;">
+            <img src="{% static "image/logo/FB_icon.png" %}" alt="FB" style="width: 25px;">&nbsp;
+            {% trans "分享" %}
+        </a>
+        <a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}" style="padding-left: 0px; border-left-width: 0px;">
+            <img src="{% static "image/logo/TWIT_icon.png" %}" alt="Twitter" style="width: 25px;">&nbsp;
+            {% trans "分享" %}
+        </a>
+
+        <a class="btn btn-sm share-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&amp;title={{ blog_post.title|urlencode }}" style="padding-left: 0px; border-left-width: 0px;">
+            <img src="{% static "image/logo/LD_icon.png" %}" alt="LinkedIn" style="width: 25px;">&nbsp;
+            {% trans "分享" %}
+        </a>
+        <a class="btn btn-sm share-google" target="_blank" href="https://plus.google.com/share?url={{ request.build_absolute_uri }}" style="padding-left: 0px; border-left-width: 0px;">
+            <img src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Google+" style="width: 25px;">&nbsp;
+            {% trans "分享" %}
+        </a>
+
 {% endblock %}
 
 {% block blog_post_previous_next %}
@@ -102,14 +107,14 @@
 {% with blog_post.get_previous_by_publish_date as previous %}
 {% if previous %}
 <li class="previous">
-    <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
+    <a href="{{ previous.get_absolute_url }}">&larr; {% trans "上一篇" %}</a>
 </li>
 {% endif %}
 {% endwith %}
 {% with blog_post.get_next_by_publish_date as next %}
 {% if next %}
 <li class="next">
-    <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
+    <a href="{{ next.get_absolute_url }}">{% trans "下一篇" %}&rarr;</a>
 </li>
 {% endif %}
 {% endwith %}

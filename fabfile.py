@@ -1,3 +1,4 @@
+'''
 from __future__ import print_function, unicode_literals
 from future.builtins import open
 
@@ -683,3 +684,6 @@ def all():
     install()
     if create():
         deploy()
+
+
+        '''
