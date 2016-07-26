@@ -9,6 +9,7 @@ from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
 
 
+
 admin.autodiscover()
 
 # Add the urlpatterns for any custom Django applications here.
@@ -45,6 +46,7 @@ urlpatterns += [
     url(r'^fwissue/', direct_to_template, {"template": "issue/foodwaste/fwissue.html"}, name="fwissue"),
     url(r'^omissue/', direct_to_template, {"template": "issue/oldman/omissue.html"}, name="omissue"),
     url(r'^bissue/', direct_to_template, {"template": "issue/breath/bissue.html"}, name="bissue"),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------

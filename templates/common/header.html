@@ -1,5 +1,5 @@
     <!-- Fixed navbar -->
-    {% load staticfiles %}
+    {% load i18n staticfiles %}
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -17,14 +17,38 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-             <a aria-hidden="true" href="/about">關於</a>
+             <a aria-hidden="true" href="/about">{% trans "關於" %}</a>
             </li>
             
              <li>
-              <a aria-hidden="true" href="/blog">觀察</a>
+              <a aria-hidden="true" href="/blog">{% trans "觀察" %}</a>
             </li>
             <li>
               <!-- <a aria-hidden="true" href="/en/index_e">EN</a> -->
+                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}" />
+                    <select hidden name="language">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in LANGUAGES %}
+<!--                    <option value="{{ language.0 }}"{% if language.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                           {{ language.1 }}
+                        </option>
+-->
+                        {% if language.0 != LANGUAGE_CODE %}
+                    <option  value="{{ language.0 }}" selected="selected">
+                        {{ language.1 }}
+                    </option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    {% if LANGUAGE_CODE == "en-us" %}
+                    <input aria-hidden="true" type="submit" value="中文" >
+                    {% elif LANGUAGE_CODE == "zh-tw" %}
+                    <input aria-hidden="true" type="submit" value="English" >
+                    {% endif%}
+                </form>
             </li>
           </ul>
           

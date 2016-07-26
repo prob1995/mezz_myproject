@@ -123,3 +123,28 @@ footer{
 ol {
 word-break:break-all;
 }
+
+.navbar-brand, .navbar-nav li input{
+    border: 0px none rgb(119, 119, 119);
+    background-color: transparent;
+    border-color: transparent;
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(119, 119, 119);
+    display: block;
+    height: 63px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none;
+    top: 0px;
+    column-rule-color: rgb(119, 119, 119);
+    perspective-origin: 33px 31.5px;
+    transform-origin: 33px 31.5px;
+    font: normal normal 200 normal 18px / 63px source-han-sans-traditional, sans-serif;
+    list-style: none outside none;
+    outline: rgb(119, 119, 119) none 0px;
+    padding: 0px 15px 15px;
+
+}
