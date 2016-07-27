@@ -460,7 +460,8 @@ LOGGING = {
 # heroku config:set AWS_SECRET_ACCESS_KEY="...KEY..."
 # Dan Suggestion
 # https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
-AWS_STORAGE_BUCKET_NAME = 'smtest-static'
+# AWS_STORAGE_BUCKET_NAME = 'smtest-static'
+AWS_STORAGE_BUCKET_NAME = 'smakers-static'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 

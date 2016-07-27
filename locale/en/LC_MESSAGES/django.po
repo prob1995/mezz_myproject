@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-26 15:04+0800\n"
+"POT-Creation-Date: 2016-07-27 10:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: myproject/settings.py:122
+#: myproject/settings.py:128
 msgid "English"
 msgstr ""
 
-#: myproject/settings.py:123
+#: myproject/settings.py:129
 msgid "Chinese"
 msgstr ""
 
-#: myproject/test.py:7
-msgid "Welcome to my site."
+#: templates/about.html:21 templates/common/header.html:20
+msgid "關於"
+msgstr "About"
+
+#: templates/about.html:24
+msgid ""
+"如果能有一個連結工程專業跟在地觀察的平台，那是不是也有機會從台灣產出類似重力"
+"燈或電力足球的產品? "
+msgstr ""
+
+#: templates/about.html:40
+msgid "團隊成員"
+msgstr ""
+
+#: templates/about.html:44
+msgid "Joe Huang"
+msgstr ""
+
+#: templates/about.html:46
+msgid "大蜜蜂 (Executive Director)"
+msgstr ""
+
+#: templates/about.html:46
+msgid "讓優雅的嗡嗡嗡，成為一種流行"
+msgstr ""
+
+#: templates/about.html:51
+msgid "Wayne Lin"
+msgstr ""
+
+#: templates/about.html:54
+msgid "無敵娃娃臉 (Project Manager)"
+msgstr ""
+
+#: templates/about.html:54
+msgid "熱血做自己，燃燒小宇宙"
+msgstr ""
+
+#: templates/about.html:62
+msgid "SM工程師 (Technical Consultant)"
+msgstr ""
+
+#: templates/about.html:62
+msgid "努力讓生活過很懶惰"
+msgstr ""
+
+#: templates/about.html:67
+msgid "Kevin Chen"
+msgstr ""
+
+#: templates/about.html:70
+msgid "應援團團長 (Consultant)"
+msgstr ""
+
+#: templates/about.html:70
+msgid "想到就作的執行力派男兒"
 msgstr ""
 
 #: templates/admin/base_site.html:19
@@ -250,9 +304,9 @@ msgstr ""
 msgid "Atom"
 msgstr ""
 
-#: templates/common/header.html:20
-msgid "關於"
-msgstr "About"
+#: templates/common/footer.html:5
+msgid "頁首"
+msgstr ""
 
 #: templates/errors/404.html:6 templates/errors/404.html:10
 #: templates/errors/404.html:15
@@ -362,6 +416,285 @@ msgstr "Solutions"
 msgid "看看現有的解決方案"
 msgstr ""
 
+#: templates/index.html:44
+msgid "【社計世代六月工坊】閃耀登場：打造屬於你的社會設計！"
+msgstr ""
+
+#: templates/index.html:48
+msgid "Solutionmakers 【社會設計的智造世代】3月份實作工坊課程公佈！"
+msgstr ""
+
+#: templates/index.html:52
+msgid "再次前進柬埔寨田野觀察測試復訪。"
+msgstr ""
+
+#: templates/index.html:56
+msgid "2015.12 Solutionmakers X ELIV 課程公佈！"
+msgstr ""
+
+#: templates/index.html:60
+msgid "2015.11 Solutionmakers X ELIV 課程公佈！"
+msgstr ""
+
+#: templates/index.html:64
+msgid "官方網站上線，大家好我們是SolutionMakers！"
+msgstr ""
+
+#: templates/index.html:68
+msgid "夏季分享會最終章 x 社會設計提案發表會，給你加倍精采！"
+msgstr ""
+
+#: templates/index.html:72
+msgid "前進柬埔寨田野考察及設計提案市場測試。"
+msgstr ""
+
+#: templates/index.html:76
+msgid "為社會而設計，夏季分享會第二部帶你認識設計新思維。"
+msgstr ""
+
+#: templates/index.html:80
+msgid "系列活動開跑，夏季分享會三部曲啟動！"
+msgstr ""
+
+#: templates/index.html:84
+msgid "SolutionMakers正式成軍！"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:21
+#: templates/issue/foodwaste/fwissue.html:21
+#: templates/issue/oldman/omissue.html:22
+msgid "背景"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:23
+msgid "柬埔寨是世界上最窮困的國家之一"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:42
+msgid "村落婦女平均每日需要花費三小時從家裡到森林裡尋找木材，回來生火才能煮飯"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:57
+#: templates/issue/foodwaste/fwissue.html:53
+#: templates/issue/oldman/omissue.html:73
+#, fuzzy
+#| msgid "解決方案"
+msgid "可能的解決方案"
+msgstr "Solutions"
+
+#: templates/issue/breath/bissue.html:60
+msgid "環境友善的木材搬運工具開發"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:62
+msgid "提升木材燃燒效率的結構改善"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:64
+msgid "燃燒不全的顆粒防治"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:78
+#: templates/issue/foodwaste/fwissue.html:84
+#: templates/issue/oldman/omissue.html:104
+msgid "合作單位"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:79
+msgid "以立國際服務"
+msgstr ""
+
+#: templates/issue/breath/bissue.html:94
+#: templates/issue/foodwaste/fwissue.html:99
+#: templates/issue/oldman/omissue.html:121
+msgid "參考資料："
+msgstr ""
+
+#: templates/issue/breath/bissue.html:95
+msgid "聯合國人類發展指數(Human Development Index)："
+msgstr ""
+
+#: templates/issue/breath/bissue.html:97
+#, python-format
+msgid "20%%人口活在貧窮線之下："
+msgstr ""
+
+#: templates/issue/breath/bissue.html:99
+msgid "未完全燃燒粒子健康影響："
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:23
+msgid ""
+"台灣近幾年廚餘回收回歸地方自治，許多都市廚餘遭到焚化處理，影響焚化爐的燃燒效"
+"率"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:38
+#: templates/issue/oldman/omissue.html:47
+msgid "核心問題"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:40
+msgid "都市因建廠問題，多需負擔昂貴的費用將廚餘送至中南部處理"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:56
+msgid "人工培育特殊菌種"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:61
+msgid "改良於小單位（家庭）使用的廚餘發酵機"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:67
+msgid "設計最短時間「就地處理」流程"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:85
+msgid "台灣廚餘堆肥資源化發展協會"
+msgstr ""
+
+#: templates/issue/foodwaste/fwissue.html:100
+msgid "廚餘101高度："
+msgstr ""
+
+#: templates/issue/issues.html:26 templates/solution/solutions.html:28
+msgid "發現問題"
+msgstr ""
+
+#: templates/issue/issues.html:27 templates/solution/solutions.html:29
+msgid ""
+"由長期關注社會議題的組織提出，透過相關的田野調查經驗剖析問題背後的問題。"
+msgstr ""
+
+#: templates/issue/issues.html:30
+msgid "申請表單"
+msgstr ""
+
+#: templates/issue/issues.html:31
+msgid ""
+"填寫SolutionMakers專用申請表單，並提供輔佐提案之影音資訊及任何相關資料。"
+msgstr ""
+
+#: templates/issue/issues.html:34
+msgid "設計測試"
+msgstr ""
+
+#: templates/issue/issues.html:35
+msgid ""
+"在設計製作過程當中適時提供協助。原型測試階段協助安排，與當地居民溝通協調，並"
+"記錄測試過程。"
+msgstr ""
+
+#: templates/issue/issues.html:38
+msgid "量產製造"
+msgstr ""
+
+#: templates/issue/issues.html:39
+msgid "由SolutionMakers合作夥伴生產，依當地情況決定量產數量。"
+msgstr ""
+
+#: templates/issue/issues.html:42 templates/solution/solutions.html:44
+msgid "解決問題"
+msgstr ""
+
+#: templates/issue/issues.html:43 templates/solution/solutions.html:45
+msgid "將量產後的產品運送到議題當地，持續追蹤使用情形並提供後續支援。"
+msgstr ""
+
+#: templates/issue/issues.html:56
+msgid "柬埔寨偏鄉生計實況"
+msgstr ""
+
+#: templates/issue/issues.html:76
+msgid "廚餘處理挑戰"
+msgstr ""
+
+#: templates/issue/issues.html:97
+msgid "獨居長者送餐規劃"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:24
+#, python-format
+msgid "台灣中低收入戶的獨居長者僅有47%%獲得政府每日補助一至兩餐的送餐服務"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:49
+msgid "即使有送餐服務，長輩仍可能一天只吃一餐"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:76
+msgid "服務單位與營養師之間的合作流程標準化"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:77
+msgid "建立一個整合服務單位、營養師、配送服務員的系統程式，"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:79
+msgid "也許可以是一個簡易的APP方便服務單位追蹤備餐與送餐的即時狀況。"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:82
+msgid "設計友善且專屬送餐服務的餐盒與餐具"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:83
+msgid "外包裝利於配送時收納、備有防漏功能，餐盒內裏採友善的通用設計。"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:86
+msgid "改善現有餐具的材質，方便配送的服務員攜帶"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:87
+msgid "可重複性使用的竹製的材質改良，使餐盒更加輕巧。"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:105
+msgid "弘道老人福利基金會"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:109
+msgid " 20年來，我們相信弘揚孝道能讓老有所安養，因此年年舉辦現代優質孝行活動；"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:110
+msgid "20年來，我們看見獨居弱勢老人心中的需求，因此在各地成立志工站關心陪伴；"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:111
+msgid "20年來，我們深感延緩老化對銀髮族的重要，因此研發推廣社區建康促進活動；"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:112
+msgid ""
+"20年來，我們發現夢想讓長者再現生命價值，因此持續在全國各地推動不老夢想。"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:113
+msgid ""
+"不老世界，感謝有您！展望未來，邀請您與20歲的弘道攜手向前，讓老人臉上，有笑"
+"容；"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:114
+msgid "讓大眾看見，銀髮生命價值；讓我們一起共創，友善、溫馨、樂活的高齡社會！"
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:122
+#, python-format
+msgid "老年人口12%% - 104年第三週內政統計通報(103年底人口結構分析) ："
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:124
+msgid "民國102年,2013 獨居老人人數及服務概況："
+msgstr ""
+
+#: templates/issue/oldman/omissue.html:126
+msgid "內政部戶政司, 人口政策資料彙集, 民國102年："
+msgstr ""
+
 #: templates/search_results.html:5 templates/search_results.html:6
 #: templates/search_results.html:15
 msgid "Search Results"
@@ -384,4 +717,72 @@ msgstr ""
 
 #: templates/search_results.html:47
 msgid "read more"
+msgstr ""
+
+#: templates/solution/solutions.html:32
+msgid "設計思考"
+msgstr ""
+
+#: templates/solution/solutions.html:33
+msgid "通盤了解議題的背景及問題背後的核心問題，找出適當的解決方法。"
+msgstr ""
+
+#: templates/solution/solutions.html:36
+msgid "製作原型"
+msgstr ""
+
+#: templates/solution/solutions.html:37
+msgid ""
+"跨領域夥伴共同設計製作具備基本功能及符合人體使用的原型，過程中SolutionMakers"
+"適時給予協助。"
+msgstr ""
+
+#: templates/solution/solutions.html:40
+msgid "當地測試"
+msgstr ""
+
+#: templates/solution/solutions.html:41
+msgid ""
+"透過議題現場實地測試取得第一手使用經驗及回饋，修正原型反覆驗證，直至符合市場"
+"需求。"
+msgstr ""
+
+#: templates/solution/solutions.html:78
+msgid "林詣翔 Yi-Xiang Lin "
+msgstr ""
+
+#: templates/solution/solutions.html:79
+msgid "國立臺北科技大學工業設計系"
+msgstr ""
+
+#: templates/solution/solutions.html:80
+msgid "產品設計專長"
+msgstr ""
+
+#: templates/solution/solutions.html:81
+msgid "高中讀廣告設計，大學主修工業產品設計，覺得善念是設計的出發點。"
+msgstr ""
+
+#: templates/solution/solutions.html:97
+msgid "我是吳筠綺，來自國立臺北科技大學，主修工業設計。"
+msgstr ""
+
+#: templates/solution/solutions.html:98
+msgid ""
+"不論產品或是形而上的服務，「從使用者出發」是我對設計的核心價值，期許我的專業"
+"能夠幫助社會變得更好，即使只是一點點，只要能讓世界永續發展就是件好事。"
+msgstr ""
+
+#: templates/solution/solutions.html:131
+msgid ""
+"Joe Huang: 大學主修機械、於光電研究所畢業後、任職於自動化量測系統供應商。對於"
+"High-Low Tech相關的產品有很深的興趣。"
+msgstr ""
+
+#: templates/solution/solutions.html:132
+msgid ""
+"Maggie Huang: 大學主修土木工程、即將於史丹佛大學 Sustainable Construction "
+"Design 研究所攻讀碩士，大學期間參加密西根大學Blue Lab社團時累積了許多透過工程"
+"來解決開發中國家議題的經驗、也希望能多累積這方面的知識與能力、為下一個產品累"
+"積能量"
 msgstr ""
